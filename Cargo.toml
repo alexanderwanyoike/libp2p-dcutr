@@ -1,0 +1,24 @@
+[package]
+name = "libp2p-dcutr"
+edition = "2021"
+rust-version = "1.83.0"
+description = "Direct connection upgrade through relay (patched: signal-based hole punch)"
+version = "0.14.2"
+license = "MIT"
+repository = "https://github.com/alexanderwanyoike/rust-libp2p"
+
+[dependencies]
+asynchronous-codec = "0.7.0"
+either = "1.11.0"
+futures = "0.3.30"
+futures-timer = "3.0"
+web-time = "1.1.0"
+libp2p-core = "0.43.1"
+libp2p-swarm = "0.47.1"
+libp2p-identity = "0.2.13"
+quick-protobuf = "0.8"
+quick-protobuf-codec = "0.3.1"
+thiserror = "2"
+tracing = "0.1.41"
+hashlink = "0.11.0"
+futures-bounded = { version = "0.3", features = ["tokio"] }
