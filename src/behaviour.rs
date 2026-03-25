@@ -36,8 +36,7 @@ use libp2p_swarm::{
     behaviour::{ConnectionClosed, DialFailure, FromSwarm},
     dial_opts::{self, DialOpts},
     dummy, ConnectionDenied, ConnectionHandler, ConnectionId, NetworkBehaviour,
-    ExternalAddrConfirmed, NewExternalAddrCandidate, NotifyHandler, THandler, THandlerInEvent,
-    THandlerOutEvent, ToSwarm,
+    NewExternalAddrCandidate, NotifyHandler, THandler, THandlerInEvent, THandlerOutEvent, ToSwarm,
 };
 use thiserror::Error;
 
@@ -367,7 +366,7 @@ impl NetworkBehaviour for Behaviour {
             FromSwarm::NewExternalAddrCandidate(NewExternalAddrCandidate { addr }) => {
                 self.address_candidates.add(addr.clone());
             }
-            FromSwarm::ExternalAddrConfirmed(confirmed) => {
+            FromSwarm::ExternalAddrConfirmed(ref confirmed) => {
                 // Also add confirmed external addresses as candidates.
                 // STUN-discovered addresses arrive via add_external_address()
                 // which only generates ExternalAddrConfirmed, not NewExternalAddrCandidate.
