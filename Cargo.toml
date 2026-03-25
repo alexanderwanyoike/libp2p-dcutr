@@ -3,7 +3,7 @@ name = "libp2p-dcutr"
 edition = "2021"
 rust-version = "1.83.0"
 description = "Direct connection upgrade through relay (patched: signal-based hole punch)"
-version = "0.14.2"
+version = "0.14.1"
 license = "MIT"
 repository = "https://github.com/alexanderwanyoike/rust-libp2p"
 
